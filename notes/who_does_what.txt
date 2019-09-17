@@ -1,0 +1,46 @@
+I will call the folder made by startproject as project and the folder made by startapp as app.
+Note: it is hard to know when to have quotes and when not to. Be careful about what you are importing and if you need quotes or not.
+I would suggest to just turn your brain off and copy/paste.
+
+
+1 ) project/urls.py will be used to access your app first. Add every app to this url list.
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('app.urls')),
+]
+
+2 ) inside app/urls.py, do this. You might be able to avoid the import and chuck app/views/home.html within quotes, but there's no upside to that at all.
+home is 'home.html' inside /app/views/
+
+
+from django.urls import path
+from app import views
+urlpatterns = [
+    path('', views.home),
+]
+
+3) Inside views.py, 
+
+from django.shortcuts import render
+
+# Create your views here.
+def home(request):
+    return render(request,'app/home.html')
+
+4) Add your app in INSTALLED_APPS in settings.py inside project/
+
+INSTALLED_APPS = [
+    'app',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+
+5) Run your server and hope for the best.
