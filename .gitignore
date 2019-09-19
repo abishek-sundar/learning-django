@@ -1,7 +1,7 @@
 *secret*
 project/venv
 project/blog/__pycache__
-
+*/.idea/
 # Created by https://www.gitignore.io
 
 ### OSX ###
