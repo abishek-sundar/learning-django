@@ -1,0 +1,24 @@
+--- SHOW SQL CODE FOR MIGRATION ---
+python manage.py sqlmigrate blog 0001
+blog is the app name and 0001 is the migration number
+
+--- DJANGO SHELL ---
+python manage.py shell
+
+--- RETURN USERS ---
+User.objects.all()
+User.objects.filter(username='abishek')
+User.objects.get(id=1)
+ 
+--- CREATING AN ENTRY IN DATABASE ---
+user = User.objects.first()
+post_1 = Post(title='Title1', content='content1', author=user)
+post_1.save()
+
+--- GETTING ATTRIBUTES ---
+post.date_posted
+
+--- CREATING POSTS USING POST_SET ---
+user.post_set.create(title='', content='')
+#no .save()
+
