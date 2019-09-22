@@ -8,6 +8,5 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now) #auto_now=True sets it when last modified and auto_now_add=True doesn't let you change the date ever
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-
     def __str__(self):
         return self.title

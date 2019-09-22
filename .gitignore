@@ -3,7 +3,7 @@ project/venv
 project/blog/__pycache__
 */.idea/
 # Created by https://www.gitignore.io
-
+.vscode
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -35,7 +35,7 @@ __pycache__/
 */__pycache__/
 # C extensions
 *.so
-project/.vscode
+*/.vscode
 # Distribution / packaging
 .Python
 env/

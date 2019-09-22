@@ -18,7 +18,12 @@ post_1.save()
 --- GETTING ATTRIBUTES ---
 post.date_posted
 
---- CREATING POSTS USING POST_SET ---
+--- GET POSTS FROM A USER ---
+user.post_set.all()
+
+--- CREATING POSTS USING POST_SET --- (Use ModelName_set always)
 user.post_set.create(title='', content='')
 #no .save()
 
+--- USING FILTERS AND TAGS ---
+post.date_posted|date:"F d, Y" 
